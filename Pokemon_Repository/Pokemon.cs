@@ -8,7 +8,7 @@ namespace Pokemon_Repository
 {
     public enum PokemonType
     {
-        Normal = 100,
+        Normal = 1,
         Grass,
         Fire,
         Water,

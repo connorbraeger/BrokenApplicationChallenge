@@ -22,11 +22,11 @@ namespace Pokemon_Console
             while (continueToRunMenu)
             {
                 Console.Clear();
-                Console.WriteLine("What would you like to do?" +
-                    "1. See my Pokemon Team" +
-                    "2. Add new Pokemon to my Team" +
-                    "3. Update a Pokemon on my Team" +
-                    "4. Remove Pokemon from my Team" +
+                Console.WriteLine("What would you like to do?\n" +
+                    "1. See my Pokemon Team\n" +
+                    "2. Add new Pokemon to my Team\n" +
+                    "3. Update a Pokemon on my Team\n" +
+                    "4. Remove Pokemon from my Team\n" +
                     "5. Exit");
                 string response = Console.ReadLine();
                 switch (response)
@@ -42,7 +42,7 @@ namespace Pokemon_Console
                         UpdateAPokemonMenu();
                         break;
                     case "4":
-
+                        RemoveAPokemon();
                         break;
                     case "5":
                         continueToRunMenu = false;
@@ -61,6 +61,7 @@ namespace Pokemon_Console
         }
         private void SeeMyPokemonTeam()
         {
+            Console.Clear();
             List<Pokemon> pokemonTeam = _repo.GetPokemonTeam();
             if (pokemonTeam.Count == 0)
             {
@@ -70,7 +71,6 @@ namespace Pokemon_Console
             }
             else
             {
-                Console.Clear();
                 Console.WriteLine("My Team:");
                 foreach (Pokemon pokemon in pokemonTeam)
                 {
@@ -82,6 +82,7 @@ namespace Pokemon_Console
                         $"\nMove Three: {pokemon.MoveThree} \nMove Four: {pokemon.MoveFour}");
                 }
             }
+            Console.ReadKey();
         }
         private void AddPokemonToTeam()
         {
