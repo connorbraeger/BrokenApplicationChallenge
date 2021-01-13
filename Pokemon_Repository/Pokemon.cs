@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pokemon_Repository
 {
-     enum PokemonType
+    public enum PokemonType
     {
         Normal = 100,
         Grass,
@@ -26,7 +26,7 @@ namespace Pokemon_Repository
         None
     }
 
-     class Pokemon
+    public class Pokemon
     {
         public string PokemonSpeciesName { get; set; }
         public string PokemonNickName { get; set; }
@@ -40,16 +40,18 @@ namespace Pokemon_Repository
 
         public Pokemon(string speciesName, string nickName, int level, PokemonType pokemonType, PokemonType secondaryType, string moveOne, string moveTwo, string moveThree, string moveFour)
         {
-            //TeamPosition = teamPosition;
+            
             PokemonSpeciesName = speciesName;
             PokemonNickName = nickName;
             Level = level;
             PokemonType = pokemonType;
-            SecondaryType = secondaryType
+            SecondaryType = secondaryType;
             MoveOne = moveOne;
             MoveTwo = moveTwo;
-        }
-            MoveThree = moveTwo;
+            MoveThree = moveThree;
             MoveFour = moveFour;
-    
+
+        }
+
+    }
 }
